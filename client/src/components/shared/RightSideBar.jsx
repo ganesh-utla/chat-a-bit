@@ -1,8 +1,8 @@
 import React from 'react'
 
-const RightSideBar = ({ users, getMessages }) => {
+const RightSideBar = ({showRightSideBar, users, getMessages }) => {
   return (
-    <div className='w-1/4 shadow-lg h-full flex flex-col px-6 py-4 gap-8'>
+    <div className={`max-lg:${showRightSideBar? 'absolute top-0 left-0 w-[95%]' : 'hidden'} w-1/4 max-w-[350px] shadow-lg h-full flex flex-col px-6 py-4 gap-8`}>
       <p className="mt-5 text-primary-500">People</p>
 
       {users.length===0? (
@@ -15,15 +15,15 @@ const RightSideBar = ({ users, getMessages }) => {
             <div
               className="flex bg-stone-200 gap-4 items-center rounded-lg shadow-md py-3 px-4 cursor-pointer"
               key={user.id}
-              onClick={() => getMessages('new', user)}
+              onClick={() => {getMessages('new', user);}}
             >
               <img
                 src={user.image? user.image : "/assets/icons/profile-placeholder.svg"} 
                 className="w-10 h-10 object-contain" 
               />
               <div className="flex flex-col">
-                <p className="text-lg font-semibold">{user.fullname}</p>
-                <p className="text-sm text-gray-2">{user.email}</p>
+                <p className="text-lg font-semibold line-clamp-1 text-ellipsis break-all">{user.fullname}</p>
+                <p className="text-sm text-gray-2 line-clamp-1 text-ellipsis break-all">{user.email}</p>
               </div>
             </div>
           ))}
