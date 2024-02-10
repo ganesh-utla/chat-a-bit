@@ -18,7 +18,7 @@ const io = require('socket.io')(server, {
 });
 const port = process.env.PORT || 5000;
 
-const allowedUrls = ["http://localhost:5173", "https://chat-a-bit-ten.vercel.app/"];
+const allowedUrls = ["http://localhost:5173", "https://chat-a-bit-ten.vercel.app/", "https://chat-a-bit-ten.vercel.app"];
 const corsOptions = {
   origin: (origin, callback) => {
     if (origin===undefined || allowedUrls.indexOf(origin) !== -1) {
