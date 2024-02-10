@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  * {
+    @apply box-border list-none p-0 m-0 scroll-smooth;
+  }
+
+  body {
+    @apply bg-light-2 text-dark-3 min-h-screen font-inter;
+  }
+
+  h1 {
+    @apply text-3xl font-bold;
+  }
+  h2 {
+    @apply text-2xl font-bold;
+  }
+  h3 {
+    @apply text-xl font-bold;
+  }
+
+  *::-webkit-scrollbar {
+    width: 3px;
+    border-radius: 2px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: #d9d9d9;
+    border-radius: 50px;
+  }
+  
+  *::-webkit-scrollbar-thumb:hover {
+    background: #d9d9d9;
+  }
+  
+}
+
+@layer utilities {
+
+  .input {
+    @apply px-3 py-2 border border-light-4 bg-light-3 rounded-lg outline-none text-dark-4 placeholder:text-gray-2;
+  }
+
+  .chat-input {
+    @apply p-3 border bg-light-2 rounded-lg outline-none text-dark-4 placeholder:text-gray-2 shadow-md flex-grow;
+  }
+
+}
