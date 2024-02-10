@@ -25,7 +25,7 @@ const MainPage = () => {
   const endMessageRef = useRef(null);
 
   useEffect(() => {
-    setSocket(io('https://chat-a-bit.onrender.com/'));
+    setSocket(io(baseUrl));
   }, []);
 
   useEffect(() => {
