@@ -2,7 +2,7 @@ import React from 'react'
 
 const RightSideBar = ({showRightSideBar, users, getMessages }) => {
   return (
-    <div className={`max-lg:${showRightSideBar? 'absolute top-0 left-0 w-[95%]' : 'hidden'} w-1/4 max-w-[350px] shadow-lg h-full flex flex-col px-6 py-4 gap-8`}>
+    <div className={`max-lg:${showRightSideBar? 'absolute flex top-0 left-0 w-[95%]' : 'hidden'} w-1/4 max-w-[350px] shadow-lg h-full lg:flex flex-col px-6 py-4 gap-8`}>
       <p className="mt-5 text-primary-500">People</p>
 
       {users.length===0? (

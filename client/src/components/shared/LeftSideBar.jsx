@@ -12,7 +12,7 @@ const LeftSideBar = ({ showLeftSideBar, setShowLeftSideBar, currentUser, convers
   }
 
   return (
-    <div className={`max-lg:${showLeftSideBar? 'absolute top-0 left-0 w-[95%]' : 'hidden'} w-1/4  max-w-[350px] px-6 py-4 flex flex-col gap-10 shadow-lg`}>
+    <div className={`max-lg:${showLeftSideBar? 'absolute flex top-0 left-0 w-[95%]' : 'hidden'} w-1/4  max-w-[350px] px-6 py-4 lg:flex flex-col gap-10 shadow-lg`}>
       <div className="mt-5 flex flex-col gap-3 px-5 rounded-lg shadow-md py-6 bg-slate-200">
         <div className="flex gap-5">
           <img
