@@ -3,11 +3,6 @@ const cors = require('cors');
 const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
-const io = require('socket.io')(8081, {
-    cors: {
-        origin: `${process.env.CLIENT_ORIGIN}`
-    }
-});
 
 require('./db/connection');
 const Users = require('./modules/Users');
@@ -15,6 +10,12 @@ const Conversations = require('./modules/Conversations');
 const Messages = require('./modules/Messages');
 
 const app = express();
+const server = require('http').createServer(app);
+const io = require('socket.io')(server, {
+    cors: {
+        origin: `${process.env.CLIENT_ORIGIN}`
+    }
+});
 const port = process.env.PORT || 5000;
 
 const allowedUrls = ["http://localhost:5173"];
@@ -237,6 +238,6 @@ app.get('/api/users/:userId', async (req, res) => {
 })
 
 
-app.listen(port, () => {
+server.listen(port, () => {
     console.log("Listening on port " + port);
 });
